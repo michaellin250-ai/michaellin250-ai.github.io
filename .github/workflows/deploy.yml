@@ -1,0 +1,51 @@
+# Deploys the static portfolio site to GitHub Pages via the
+# official Pages deployment API whenever main is pushed.
+#
+# One-time setup required in GitHub:
+#   Repo Settings → Pages → Source → "GitHub Actions"
+
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:      # allow manual runs from the Actions tab
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Only allow one concurrent deployment; cancel in-flight runs
+# if a newer push arrives.
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Prevent Jekyll from processing the site
+      - name: Add .nojekyll
+        run: touch .nojekyll
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload site artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "."
+
+      - name: Deploy to GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@v4
