@@ -13,7 +13,7 @@
     rel="stylesheet"
   />
 
-  <link rel="stylesheet" href="style.css?v=6" />
+  <link rel="stylesheet" href="style.css?v=7" />
 </head>
 <body>
 
@@ -65,10 +65,17 @@
 
     <!-- Intro -->
     <section id="intro" class="intro-section">
-      <h1 class="intro-name" id="introName">Hi, I&rsquo;m Michael welcome to my website!</h1>
-      <p class="intro-sub" id="introSub">
-        First-gen CS student at UW building ML systems and full-stack products that actually matter.
-      </p>
+      <div class="intro-layout">
+        <div class="intro-text">
+          <h1 class="intro-name" id="introName">Hi, I&rsquo;m Michael welcome to my website!</h1>
+          <p class="intro-sub" id="introSub">
+            First-gen CS student at UW building ML systems and full-stack products that actually matter.
+          </p>
+        </div>
+        <div class="intro-photo-wrap" id="introPhoto">
+          <img src="me.jpg" alt="Michael Lin next to the FIFA World Cup trophy" class="intro-photo" />
+        </div>
+      </div>
     </section>
 
     <!-- About -->
@@ -286,6 +293,6 @@
   <!-- D3 + TopoJSON for the world map -->
   <script src="https://d3js.org/d3.v7.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
-  <script src="script.js?v=6"></script>
+  <script src="script.js?v=7"></script>
 </body>
 </html>

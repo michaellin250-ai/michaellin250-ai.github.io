@@ -246,6 +246,51 @@ a { text-decoration: none; color: inherit; }
   margin-bottom: 32px;
 }
 
+/* ── Intro photo layout ─────────────────────────────────── */
+.intro-layout {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.intro-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.intro-photo-wrap {
+  flex-shrink: 0;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.8s var(--ease) 0.5s, transform 0.8s var(--ease) 0.5s;
+}
+.intro-photo-wrap.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.intro-photo {
+  width: 180px;
+  height: 220px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  display: block;
+  filter: grayscale(15%);
+  transition: filter 0.3s ease, transform 0.3s var(--ease);
+}
+.intro-photo:hover {
+  filter: grayscale(0%);
+  transform: scale(1.02);
+}
+
+@media (max-width: 600px) {
+  .intro-layout { flex-direction: column-reverse; gap: 24px; }
+  .intro-photo   { width: 120px; height: 148px; }
+}
+
 /* ── About ──────────────────────────────────────────────── */
 .about-body {
   display: flex;

@@ -150,13 +150,16 @@ window.addEventListener('DOMContentLoaded', () => {
    then the name and subtitle fade up.
 ─────────────────────────────────────────────────────────── */
 (function introAnimation() {
-  const nameEl = document.getElementById('introName');
-  const subEl  = document.getElementById('introSub');
+  const nameEl  = document.getElementById('introName');
+  const subEl   = document.getElementById('introSub');
+  const photoEl = document.getElementById('introPhoto');
 
   // Heading fades + rises in
-  setTimeout(() => nameEl.classList.add('in'), 300);
+  setTimeout(() => nameEl.classList.add('in'),  300);
   // Subtitle follows
-  setTimeout(() => subEl.classList.add('in'), 800);
+  setTimeout(() => subEl.classList.add('in'),   800);
+  // Photo fades in
+  if (photoEl) setTimeout(() => photoEl.classList.add('in'), 500);
 })();
 
 
