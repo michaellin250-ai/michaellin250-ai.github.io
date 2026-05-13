@@ -151,8 +151,11 @@ window.addEventListener('DOMContentLoaded', () => {
   const label = btn && btn.querySelector('.toggle-label');
   if (!btn) return;
 
-  // Apply saved preference immediately (no flash)
-  if (localStorage.getItem('theme') === 'light') {
+  // Light mode is default; only go dark if user explicitly chose dark
+  const savedTheme = localStorage.getItem('theme');
+  const isDark = savedTheme === 'dark';
+
+  if (!isDark) {
     document.body.classList.add('light-mode');
     if (label) label.textContent = 'Dark mode';
     btn.setAttribute('aria-label', 'Toggle dark mode');
