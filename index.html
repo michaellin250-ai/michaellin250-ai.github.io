@@ -17,224 +17,245 @@
 </head>
 <body>
 
-  <!-- Film-grain texture overlay, filled by script.js -->
+  <!-- Film-grain overlay, filled by script.js -->
   <div id="grain" aria-hidden="true"></div>
 
-  <!-- ── Navigation ───────────────────────────────────────── -->
-  <nav id="nav" aria-label="Main navigation">
-    <div class="nav-inner">
-      <a href="#hero" class="nav-logo">ML</a>
-      <ul class="nav-links" role="list">
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+  <!-- ── Sidebar ────────────────────────────────────────────── -->
+  <aside class="sidebar" id="sidebar" aria-label="Site navigation">
+
+    <div class="sidebar-identity">
+      <a href="#intro" class="sidebar-name">Michael Lin</a>
+      <p class="sidebar-tagline">CS @ UW &middot; ML &middot; Full&#8209;Stack</p>
     </div>
-  </nav>
 
-  <!-- ── Hero ─────────────────────────────────────────────── -->
-  <section id="hero" aria-label="Introduction">
-    <div class="hero-content">
-      <p class="welcome-line" id="welcomeText" aria-label="Welcome to Michael's website"></p>
-      <h1 class="hero-name" id="heroName">Michael Lin</h1>
-      <div class="scroll-cue" id="scrollCue" aria-hidden="true">
-        <span class="scroll-label">Scroll</span>
-        <div class="scroll-bar"></div>
-      </div>
-    </div>
-  </section>
+    <nav class="sidebar-nav" aria-label="Sections">
+      <a href="#about"    class="nav-link" data-section="about">About</a>
+      <a href="#education" class="nav-link" data-section="education">Education</a>
+      <a href="#projects" class="nav-link" data-section="projects">Projects</a>
+      <a href="#skills"  class="nav-link" data-section="skills">Skills</a>
+      <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+    </nav>
 
-  <!-- ── About ────────────────────────────────────────────── -->
-  <section id="about" class="section">
-    <div class="container">
-      <span class="section-label reveal">About</span>
-      <div class="about-grid">
-        <div class="about-left">
-          <h2 class="section-heading reveal">
-            Building at the intersection<br />of AI and real&#8209;world impact.
-          </h2>
-        </div>
-        <div class="about-right">
-          <p class="about-text reveal">
-            First-generation university student at the
-            <em>University of Washington</em>, Paul G. Allen School of Computer
-            Science &mdash; Class of 2029. Driven by machine learning, computer
-            vision, and full-stack engineering, with a focus on building things
-            that actually matter.
-          </p>
-          <p class="about-text reveal">
-            Outside of code, I compete at the top levels of Fortnite, Valorant,
-            and League of Legends, and follow soccer closely. The pattern
-            recognition and discipline from high-level competitive play shapes
-            how I approach hard engineering problems.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Projects ─────────────────────────────────────────── -->
-  <section id="projects" class="section">
-    <div class="container">
-      <span class="section-label reveal">Projects</span>
-      <h2 class="section-heading reveal">Selected Work</h2>
-
-      <div class="projects-grid">
-
-        <!-- HumanZero -->
-        <article class="project-card reveal">
-          <div class="card-top">
-            <h3 class="card-title">HumanZero</h3>
-            <a
-              href="https://github.com/michaellin250-ai/humanzero-b313ee74"
-              class="card-link"
-              aria-label="HumanZero on GitHub"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
-              </svg>
-            </a>
-          </div>
-          <p class="card-desc">
-            AI-generated content detection using adversarial CLIP training &mdash; ~98% classification
-            accuracy across text and image modalities. Full-stack Python/Flask backend with React frontend.
-          </p>
-          <div class="card-stack">
-            <span>Python</span><span>Flask</span><span>React</span><span>PyTorch</span><span>CLIP</span>
-          </div>
-        </article>
-
-        <!-- Discord Internship Bot -->
-        <article class="project-card reveal">
-          <div class="card-top">
-            <h3 class="card-title">Discord Internship Bot</h3>
-            <a
-              href="https://github.com/michaellin250-ai/Internship-bot-"
-              class="card-link"
-              aria-label="Discord Internship Bot on GitHub"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
-              </svg>
-            </a>
-          </div>
-          <p class="card-desc">
-            Automated internship listing scraper and real-time Discord notifier. Scrapes major job boards
-            and pings relevant roles on new postings, deployed on Railway.
-          </p>
-          <div class="card-stack">
-            <span>Python</span><span>discord.py</span><span>BeautifulSoup</span><span>Railway</span>
-          </div>
-        </article>
-
-        <!-- Coming Soon slots -->
-        <article class="project-card project-card--soon reveal">
-          <div class="card-top">
-            <h3 class="card-title">Coming Soon</h3>
-          </div>
-          <p class="card-desc">Next project in progress.</p>
-          <div class="card-stack"><span>&mdash;</span></div>
-        </article>
-
-        <article class="project-card project-card--soon reveal">
-          <div class="card-top">
-            <h3 class="card-title">Coming Soon</h3>
-          </div>
-          <p class="card-desc">Something interesting is being built.</p>
-          <div class="card-stack"><span>&mdash;</span></div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Skills ────────────────────────────────────────────── -->
-  <section id="skills" class="section">
-    <div class="container">
-      <span class="section-label reveal">Skills</span>
-      <h2 class="section-heading reveal">Toolkit</h2>
-
-      <div class="skills-grid">
-        <div class="skill-group reveal">
-          <h3 class="skill-category">Languages</h3>
-          <div class="skill-tags">
-            <span>Python</span>
-            <span>TypeScript</span>
-            <span>JavaScript</span>
-            <span>Java</span>
-            <span>C</span>
-          </div>
-        </div>
-
-        <div class="skill-group reveal">
-          <h3 class="skill-category">Frameworks &amp; Libraries</h3>
-          <div class="skill-tags">
-            <span>React</span>
-            <span>Next.js</span>
-            <span>Flask</span>
-            <span>PyTorch</span>
-            <span>Tailwind CSS</span>
-          </div>
-        </div>
-
-        <div class="skill-group reveal">
-          <h3 class="skill-category">Tools &amp; Infrastructure</h3>
-          <div class="skill-tags">
-            <span>Git</span>
-            <span>Supabase</span>
-            <span>REST APIs</span>
-            <span>Railway</span>
-            <span>Linux / CLI</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Contact ───────────────────────────────────────────── -->
-  <section id="contact" class="section">
-    <div class="container">
-      <span class="section-label reveal">Contact</span>
-      <h2 class="section-heading reveal">Let&rsquo;s Connect</h2>
-      <p class="contact-sub reveal">Open to collaborations, internships, and interesting conversations.</p>
-
-      <div class="contact-links reveal">
-
-        <a href="mailto:mlin36@uw.edu" class="contact-item" aria-label="Email Michael">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <div class="sidebar-footer">
+      <div class="sidebar-socials">
+        <a href="mailto:mlin36@uw.edu" aria-label="Email" class="social-link">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <rect x="2" y="4" width="20" height="16" rx="2"/>
             <path d="m2 7 10 7 10-7"/>
           </svg>
-          <span>mlin36@uw.edu</span>
         </a>
-
-        <a href="https://github.com/michaellin250-ai" class="contact-item" aria-label="Michael on GitHub" target="_blank" rel="noopener noreferrer">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <a href="https://github.com/michaellin250-ai" aria-label="GitHub" class="social-link" target="_blank" rel="noopener noreferrer">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
           </svg>
-          <span>github.com/michaellin250-ai</span>
         </a>
-
-        <a href="https://www.linkedin.com/in/michael-lin07/" class="contact-item" aria-label="Michael on LinkedIn" target="_blank" rel="noopener noreferrer">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <a href="https://www.linkedin.com/in/michael-lin07/" aria-label="LinkedIn" class="social-link" target="_blank" rel="noopener noreferrer">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
           </svg>
-          <span>LinkedIn</span>
         </a>
-
       </div>
     </div>
-  </section>
 
-  <!-- ── Footer ────────────────────────────────────────────── -->
-  <footer class="footer">
-    <p>&copy; 2025 Michael Lin &mdash; Designed and built with care.</p>
-  </footer>
+  </aside>
+
+  <!-- ── Main content ──────────────────────────────────────── -->
+  <main class="main-content" id="main">
+
+    <!-- Intro -->
+    <section id="intro" class="intro-section">
+      <p class="intro-welcome" id="introWelcome" aria-label="Welcome to Michael's website"></p>
+      <h1 class="intro-name" id="introName">hi, i&rsquo;m michael.</h1>
+      <p class="intro-sub" id="introSub">
+        First-gen CS student at UW building ML systems and full-stack products that actually matter.
+      </p>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="content-section">
+      <span class="section-label">About</span>
+      <div class="about-body">
+        <p class="body-text">
+          First-generation university student at the
+          <em>University of Washington</em>, Paul G. Allen School of Computer
+          Science &mdash; Class of 2029. Driven by machine learning, computer
+          vision, and full-stack engineering, with a focus on building things
+          that actually matter.
+        </p>
+        <p class="body-text">
+          Outside of code, I compete at the top levels of Fortnite, Valorant,
+          and League of Legends, and follow soccer closely. The pattern
+          recognition and discipline from high-level competitive play shapes how
+          I approach hard engineering problems.
+        </p>
+        <p class="body-text">
+          Passionate about the intersection of AI and real-world products &mdash;
+          wherever intelligence can replace friction.
+        </p>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="content-section">
+      <span class="section-label">Education</span>
+      <div class="edu-card">
+        <div class="edu-icon" aria-hidden="true">
+          <!-- UW "W" monogram -->
+          <svg width="28" height="28" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="40" height="40" rx="6" fill="#4B2E83"/>
+            <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle"
+              font-family="Georgia, serif" font-size="22" font-weight="700" fill="#ffffff">W</text>
+          </svg>
+        </div>
+        <div class="edu-info">
+          <h3 class="edu-school">University of Washington</h3>
+          <p class="edu-degree">B.S. Computer Science &mdash; Paul G. Allen School</p>
+          <p class="edu-meta">Sep 2025 &mdash; Jun 2029 &nbsp;&middot;&nbsp; Seattle, WA</p>
+          <p class="edu-detail">
+            Relevant coursework: Data Structures &amp; Algorithms, Systems Programming,
+            Machine Learning, Computer Vision.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="content-section">
+      <span class="section-label">Projects</span>
+
+      <div class="projects-list">
+
+        <!-- HumanZero -->
+        <article class="project-card">
+          <div class="card-top">
+            <div>
+              <h3 class="card-title">HumanZero</h3>
+              <p class="card-desc">
+                AI-generated content detection using adversarial CLIP training.
+                ~98% classification accuracy across text and image modalities.
+                Full-stack Python/Flask backend with React frontend.
+              </p>
+              <div class="card-stack">
+                <span>Python</span><span>Flask</span><span>React</span><span>PyTorch</span><span>CLIP</span>
+              </div>
+            </div>
+            <a href="https://github.com/michaellin250-ai/humanzero-b313ee74" class="card-link" aria-label="HumanZero on GitHub" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Discord Bot -->
+        <article class="project-card">
+          <div class="card-top">
+            <div>
+              <h3 class="card-title">Discord Internship Bot</h3>
+              <p class="card-desc">
+                Automated internship listing scraper and real-time Discord notifier.
+                Scrapes major job boards and pings relevant roles on new postings,
+                deployed on Railway.
+              </p>
+              <div class="card-stack">
+                <span>Python</span><span>discord.py</span><span>BeautifulSoup</span><span>Railway</span>
+              </div>
+            </div>
+            <a href="https://github.com/michaellin250-ai/Internship-bot-" class="card-link" aria-label="Discord Internship Bot on GitHub" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Coming soon -->
+        <article class="project-card project-card--soon">
+          <div class="card-top">
+            <div>
+              <h3 class="card-title">Coming Soon</h3>
+              <p class="card-desc">Next project in progress.</p>
+              <div class="card-stack"><span>&mdash;</span></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card project-card--soon">
+          <div class="card-top">
+            <div>
+              <h3 class="card-title">Coming Soon</h3>
+              <p class="card-desc">Something interesting is being built.</p>
+              <div class="card-stack"><span>&mdash;</span></div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="content-section">
+      <span class="section-label">Skills</span>
+      <div class="skills-grid">
+
+        <div class="skill-group">
+          <h3 class="skill-category">Languages</h3>
+          <div class="skill-tags">
+            <span>Python</span><span>TypeScript</span><span>JavaScript</span><span>Java</span><span>C</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3 class="skill-category">Frameworks &amp; Libraries</h3>
+          <div class="skill-tags">
+            <span>React</span><span>Next.js</span><span>Flask</span><span>PyTorch</span><span>Tailwind CSS</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3 class="skill-category">Tools &amp; Infrastructure</h3>
+          <div class="skill-tags">
+            <span>Git</span><span>Supabase</span><span>REST APIs</span><span>Railway</span><span>Linux / CLI</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="content-section">
+      <span class="section-label">Contact</span>
+      <p class="body-text contact-intro">
+        Open to collaborations, internships, and interesting conversations.
+      </p>
+      <div class="contact-links">
+        <a href="mailto:mlin36@uw.edu" class="contact-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <path d="m2 7 10 7 10-7"/>
+          </svg>
+          mlin36@uw.edu
+        </a>
+        <a href="https://github.com/michaellin250-ai" class="contact-item" target="_blank" rel="noopener noreferrer">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+          github.com/michaellin250-ai
+        </a>
+        <a href="https://www.linkedin.com/in/michael-lin07/" class="contact-item" target="_blank" rel="noopener noreferrer">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+          linkedin.com/in/michael-lin07
+        </a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>&copy; 2025 Michael Lin &mdash; Designed and built with care.</p>
+    </footer>
+
+  </main>
 
   <script src="script.js"></script>
 </body>
