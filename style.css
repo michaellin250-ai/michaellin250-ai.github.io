@@ -674,6 +674,72 @@ a { text-decoration: none; color: inherit; }
 .drawer-nav { display: flex; flex-direction: column; gap: 4px; }
 .drawer-nav .nav-link { font-size: 1rem; }
 
+/* ── Theme toggle button ────────────────────────────────── */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 7px 14px;
+  cursor: pointer;
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  margin-bottom: 18px;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+  width: fit-content;
+}
+.theme-toggle:hover {
+  color: var(--text-primary);
+  border-color: var(--border-hover);
+  background: var(--accent-dim);
+}
+
+/* Icon visibility */
+.icon-sun  { display: block; }
+.icon-moon { display: none; }
+body.light-mode .icon-sun  { display: none; }
+body.light-mode .icon-moon { display: block; }
+
+/* ── Light mode variables ───────────────────────────────── */
+body.light-mode {
+  --bg:           #F6F2EC;
+  --bg-card:      #FFFFFF;
+  --sidebar-bg:   #EDE8DF;
+  --text-primary: #1A1714;
+  --text-muted:   #7B756E;
+  --text-soft:    rgba(26, 23, 20, 0.62);
+  --accent:       #8F6010;
+  --accent-dim:   rgba(143, 96, 16, 0.10);
+  --border:       rgba(0, 0, 0, 0.10);
+  --border-hover: rgba(143, 96, 16, 0.30);
+}
+
+/* Light mode: mobile nav bar background */
+body.light-mode .mobile-nav-bar {
+  background: rgba(246, 242, 236, 0.92);
+}
+
+/* Light mode: map container keep dark (it looks intentional) */
+body.light-mode .map-container {
+  border-color: rgba(0,0,0,0.15);
+}
+
+/* Light mode: map tooltip */
+body.light-mode .map-tooltip {
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--accent);
+}
+
+/* Light mode: skill tag */
+body.light-mode .skill-tag {
+  background: rgba(143, 96, 16, 0.08);
+}
+
 /* ── Responsive ─────────────────────────────────────────── */
 @media (max-width: 860px) {
   .sidebar { display: none; }

@@ -145,6 +145,28 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 
+/* ── Light / Dark theme toggle ──────────────────────────── */
+(function initThemeToggle() {
+  const btn   = document.getElementById('themeToggle');
+  const label = btn && btn.querySelector('.toggle-label');
+  if (!btn) return;
+
+  // Apply saved preference immediately (no flash)
+  if (localStorage.getItem('theme') === 'light') {
+    document.body.classList.add('light-mode');
+    if (label) label.textContent = 'Dark mode';
+    btn.setAttribute('aria-label', 'Toggle dark mode');
+  }
+
+  btn.addEventListener('click', () => {
+    const isLight = document.body.classList.toggle('light-mode');
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    if (label) label.textContent = isLight ? 'Dark mode' : 'Light mode';
+    btn.setAttribute('aria-label', isLight ? 'Toggle dark mode' : 'Toggle light mode');
+  });
+})();
+
+
 /* ── Intro text animation ────────────────────────────────
    "Welcome to Michael's website" words stagger in,
    then the name and subtitle fade up.
