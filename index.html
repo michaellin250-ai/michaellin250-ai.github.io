@@ -13,7 +13,7 @@
     rel="stylesheet"
   />
 
-  <link rel="stylesheet" href="style.css?v=15" />
+  <link rel="stylesheet" href="style.css?v=16" />
 </head>
 <body>
 
@@ -31,6 +31,7 @@
     <nav class="sidebar-nav" aria-label="Sections">
       <a href="#about"    class="nav-link" data-section="about">About</a>
       <a href="#education" class="nav-link" data-section="education">Education</a>
+      <a href="#experience" class="nav-link" data-section="experience">Experience</a>
       <a href="#projects" class="nav-link" data-section="projects">Projects</a>
       <a href="#skills"  class="nav-link" data-section="skills">Skills</a>
       <a href="#contact" class="nav-link" data-section="contact">Contact</a>
@@ -138,6 +139,50 @@
           <p class="edu-detail">
             Relevant coursework: Java, Linear Algebra, Hardware and Software Interface, Discrete Math.
           </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="content-section">
+      <span class="section-label">Experience</span>
+
+      <div class="exp-list">
+        <!-- GEN1 -->
+        <div class="exp-card">
+          <div class="exp-logo">
+            <img src="GEN1.png" alt="GEN1 logo" />
+          </div>
+          <div class="exp-info">
+            <div class="exp-header">
+              <h3 class="exp-title">Technology Officer</h3>
+              <p class="exp-company">GEN1</p>
+            </div>
+            <p class="exp-meta">September 2025 – Present &nbsp;&middot;&nbsp; Seattle, WA</p>
+            <ul class="exp-bullets">
+              <li>Built and maintained the club website in JavaScript, supporting 50+ first-generation CS students at UW Allen School</li>
+              <li>Built a financial tracking and reporting system to manage club budgets, reducing report generation time from 2+ hours to under 10 minutes</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- AFC Sushi -->
+        <div class="exp-card">
+          <div class="exp-logo">
+            <img src="AFC Sushi.avif" alt="AFC Sushi logo" />
+          </div>
+          <div class="exp-info">
+            <div class="exp-header">
+              <h3 class="exp-title">Software Engineer Intern</h3>
+              <p class="exp-company">AFC Sushi</p>
+            </div>
+            <p class="exp-meta">June 2025 – September 2025 &nbsp;&middot;&nbsp; Seattle, WA</p>
+            <ul class="exp-bullets">
+              <li>Automated supply tracking with spreadsheets and Python scripts, increasing efficiency of weekly inventory runs by 35%</li>
+              <li>Developed internal scheduling tools in Python to streamline shift management for 10 employees, eliminating 10+ scheduling conflicts per week</li>
+              <li>Built a trend tracker that analyzed sales data and identified customer demand patterns, directly informing the addition and removal of 10 menu items</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -345,6 +390,6 @@
   <!-- D3 + TopoJSON for the world map -->
   <script src="https://d3js.org/d3.v7.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
-  <script src="script.js?v=15"></script>
+  <script src="script.js?v=16"></script>
 </body>
 </html>
