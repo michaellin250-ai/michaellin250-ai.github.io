@@ -428,6 +428,13 @@ a { text-decoration: none; color: inherit; }
 }
 .card-link:hover { color: var(--accent); transform: scale(1.1); }
 
+/* Multiple links container */
+.card-links {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
 .card-stack {
   display: flex;
   flex-wrap: wrap;
