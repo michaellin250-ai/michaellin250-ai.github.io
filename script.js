@@ -154,7 +154,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const nameEl    = document.getElementById('introName');
   const subEl     = document.getElementById('introSub');
 
-  const PHRASE   = "Welcome to Michael's website";
+  const PHRASE   = "Hi, I'm Michael —";
   const WORD_GAP = 110; // ms per word
   const START    = 400; // initial delay
 
