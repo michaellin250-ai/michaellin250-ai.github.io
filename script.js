@@ -150,35 +150,13 @@ window.addEventListener('DOMContentLoaded', () => {
    then the name and subtitle fade up.
 ─────────────────────────────────────────────────────────── */
 (function introAnimation() {
-  const welcomeEl = document.getElementById('introWelcome');
-  const nameEl    = document.getElementById('introName');
-  const subEl     = document.getElementById('introSub');
+  const nameEl = document.getElementById('introName');
+  const subEl  = document.getElementById('introSub');
 
-  const PHRASE   = "Hi, I'm Michael —";
-  const WORD_GAP = 110; // ms per word
-  const START    = 400; // initial delay
-
-  // Build word spans
-  PHRASE.split(' ').forEach((word, i, arr) => {
-    const span = document.createElement('span');
-    span.className   = 'word';
-    span.textContent = i < arr.length - 1 ? word + ' ' : word;
-    welcomeEl.appendChild(span);
-  });
-
-  const spans    = welcomeEl.querySelectorAll('.word');
-  const wordsEnd = START + spans.length * WORD_GAP;
-
-  // Stagger words in
-  spans.forEach((span, i) => {
-    setTimeout(() => span.classList.add('in'), START + i * WORD_GAP);
-  });
-
-  // Name rises after words settle
-  setTimeout(() => nameEl.classList.add('in'), wordsEnd + 350);
-
-  // Subtitle fades after name
-  setTimeout(() => subEl.classList.add('in'), wordsEnd + 700);
+  // Heading fades + rises in
+  setTimeout(() => nameEl.classList.add('in'), 300);
+  // Subtitle follows
+  setTimeout(() => subEl.classList.add('in'), 800);
 })();
 
 
