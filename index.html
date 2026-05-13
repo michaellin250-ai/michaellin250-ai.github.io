@@ -34,6 +34,7 @@
       <a href="#projects" class="nav-link" data-section="projects">Projects</a>
       <a href="#skills"  class="nav-link" data-section="skills">Skills</a>
       <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+      <a href="#stats"   class="nav-link" data-section="stats">Stats</a>
     </nav>
 
     <div class="sidebar-footer">
@@ -251,12 +252,41 @@
       </div>
     </section>
 
+    <!-- Stats for Nerds -->
+    <section id="stats" class="content-section stats-section">
+      <span class="section-label">Stats for Nerds</span>
+
+      <div class="stats-numbers">
+        <div class="stat-block">
+          <span class="stat-val">15</span>
+          <span class="stat-desc">countries visited</span>
+        </div>
+        <div class="stat-block">
+          <span class="stat-val">3</span>
+          <span class="stat-desc">continents</span>
+        </div>
+        <div class="stat-block">
+          <span class="stat-val">~8%</span>
+          <span class="stat-desc">of the world</span>
+        </div>
+      </div>
+
+      <div id="mapContainer" class="map-container">
+        <svg id="worldMap" aria-label="World map showing visited countries"></svg>
+      </div>
+
+      <p class="map-caption">places i&rsquo;ve been &mdash; highlighted in gold</p>
+    </section>
+
     <footer class="footer">
       <p>&copy; 2025 Michael Lin &mdash; Designed and built with care.</p>
     </footer>
 
   </main>
 
+  <!-- D3 + TopoJSON for the world map -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

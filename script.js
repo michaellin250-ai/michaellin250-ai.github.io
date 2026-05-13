@@ -1,3 +1,122 @@
+/* ── World map (Stats for Nerds) ─────────────────────────
+   Uses D3 v7 + TopoJSON loaded via CDN <script> tags above.
+   Countries are keyed by ISO 3166-1 numeric codes.
+─────────────────────────────────────────────────────────── */
+(function initWorldMap() {
+  // ISO 3166-1 numeric codes for every country visited
+  const VISITED = new Set([
+    840, // United States
+    124, // Canada
+    484, // Mexico
+    392, // Japan
+    410, // South Korea
+    158, // Taiwan
+    250, // France
+    826, // United Kingdom
+    276, // Germany
+    380, // Italy
+    756, // Switzerland
+    344, // Hong Kong SAR
+    702, // Singapore
+    704, // Vietnam
+    764, // Thailand
+  ]);
+
+  // Human-readable names for the tooltip
+  const NAMES = {
+    840: 'United States', 124: 'Canada', 484: 'Mexico',
+    392: 'Japan', 410: 'South Korea', 158: 'Taiwan',
+    250: 'France', 826: 'United Kingdom', 276: 'Germany',
+    380: 'Italy', 756: 'Switzerland', 344: 'Hong Kong',
+    702: 'Singapore', 704: 'Vietnam', 764: 'Thailand',
+  };
+
+  const container = document.getElementById('mapContainer');
+  const svgEl     = document.getElementById('worldMap');
+  if (!container || !svgEl) return;
+
+  // Tooltip DOM node
+  const tooltip = document.createElement('div');
+  tooltip.className = 'map-tooltip';
+  document.body.appendChild(tooltip);
+
+  let worldData = null; // cache the fetch
+
+  async function render() {
+    const W = container.clientWidth;
+    const H = Math.round(W * 0.50);
+
+    // Clear any previous drawing
+    d3.select(svgEl).selectAll('*').remove();
+
+    const svg = d3.select(svgEl)
+      .attr('viewBox', `0 0 ${W} ${H}`)
+      .attr('width', W)
+      .attr('height', H);
+
+    // Fetch once, cache
+    if (!worldData) {
+      worldData = await d3.json(
+        'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json'
+      );
+    }
+
+    const countries = topojson.feature(worldData, worldData.objects.countries);
+    const borders   = topojson.mesh(worldData, worldData.objects.countries,
+                                    (a, b) => a !== b);
+
+    const projection = d3.geoNaturalEarth1().fitSize([W, H], { type: 'Sphere' });
+    const path       = d3.geoPath().projection(projection);
+
+    // Ocean fill
+    svg.append('path')
+      .datum({ type: 'Sphere' })
+      .attr('d', path)
+      .attr('fill', '#0E0E0E');
+
+    // Country fills
+    svg.selectAll('.country')
+      .data(countries.features)
+      .join('path')
+      .attr('class', 'country')
+      .attr('d', path)
+      .attr('fill', d => VISITED.has(+d.id) ? '#C9A252' : '#1C1A17')
+      .attr('stroke', 'none')
+      // Tooltip only for visited
+      .on('mousemove', function(event, d) {
+        const id = +d.id;
+        if (!VISITED.has(id)) return;
+        tooltip.textContent = NAMES[id] || id;
+        tooltip.classList.add('visible');
+        tooltip.style.left = (event.clientX + 14) + 'px';
+        tooltip.style.top  = (event.clientY - 28) + 'px';
+      })
+      .on('mouseleave', function(event, d) {
+        if (!VISITED.has(+d.id)) return;
+        tooltip.classList.remove('visible');
+      });
+
+    // Subtle country borders
+    svg.append('path')
+      .datum(borders)
+      .attr('d', path)
+      .attr('fill', 'none')
+      .attr('stroke', '#0A0A0A')
+      .attr('stroke-width', 0.4);
+  }
+
+  // Wait for D3/TopoJSON to load, then render
+  window.addEventListener('load', render);
+
+  // Redraw on resize (debounced)
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(render, 180);
+  });
+})();
+
+
 /* ── Film-grain texture ──────────────────────────────────
    Generates a 220×220 noise canvas once and tiles it as a
    fixed overlay. Static keeps CPU near zero.
@@ -126,6 +245,7 @@ window.addEventListener('DOMContentLoaded', () => {
         <a href="#projects"  class="nav-link" data-section="projects">Projects</a>
         <a href="#skills"    class="nav-link" data-section="skills">Skills</a>
         <a href="#contact"   class="nav-link" data-section="contact">Contact</a>
+        <a href="#stats"     class="nav-link" data-section="stats">Stats</a>
       </nav>
       <div style="display:flex;gap:20px;padding-top:12px;border-top:1px solid var(--border);">
         <a href="mailto:mlin36@uw.edu" class="social-link" aria-label="Email">
